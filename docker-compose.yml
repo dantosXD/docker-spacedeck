@@ -9,4 +9,4 @@ services:
     volumes:
       - /home/spacedeck/config:/app/config
       - /home/spacedeck/storage:/app/storage
-      - /home/spacedeck/database/database.sqlite:/app/database.sqlite
+      - /home/spacedeck/database:/app/database
