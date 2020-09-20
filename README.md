@@ -19,7 +19,7 @@ Spacedeck Docker image.
 Promoted `bash` to shell first class.
 
 ## How
-After changing the paths in the `docker-compose.yml` file:
+After updating the paths in the `docker-compose.yml` file and adjusting the config in `config/default.json`:
 ```bash
 docker-compose up -d
 ```

@@ -51,19 +51,19 @@ LABEL org.opencontainers.image.version="${BUILD_VERSION}"
 LABEL org.opencontainers.image.revision="${BUILD_REVISION}"
 LABEL org.opencontainers.image.created="${BUILD_DATE}"
 LABEL org.opencontainers.image.title="Spacedeck"
-LABEL org.opencontainers.image.description="Docker image for Spacedeck. \
-  Official Docker image is expected to be built on demand and its image architecture is not good, \
-  therefore this image is there to fill the gap of the missing Spacedeck Docker image."
+LABEL org.opencontainers.image.description="Docker image for Spacedeck.\
+ Official Docker image is expected to be built on demand and its image architecture is not good,\
+ therefore this image is there to fill the gap of the missing Spacedeck Docker image."
 LABEL org.opencontainers.image.url="https://hub.docker.com/r/akito13/spacedeck"
 LABEL org.opencontainers.image.documentation="https://doc.akito.ooo/books/home/page/setting-up-a-spacedeck-server"
 LABEL org.opencontainers.image.source="https://github.com/theAkito/docker-spacedeck"
 LABEL org.opencontainers.image.licenses="GPL-3.0+"
 
 RUN apk add --update \
-    graphicsmagick \
-    ffmpeg \
-    ffmpeg-dev \
-    ghostscript
+            graphicsmagick \
+            ffmpeg \
+            ffmpeg-dev \
+            ghostscript
 
 WORKDIR /app
 
@@ -74,6 +74,8 @@ COPY --from=build /spacedeck /app
 RUN rm -fr /tmp/* /var/tmp/* /var/cache/*/*
 
 EXPOSE 9666
+
+VOLUME [ "/app/config" ]
 
 ENTRYPOINT [ "/usr/local/bin/node" ]
 CMD [ "spacedeck.js" ]

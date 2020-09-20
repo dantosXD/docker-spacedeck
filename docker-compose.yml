@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  spacedeck:
+    image: akito13/spacedeck
+    container_name: spacedeck
+    ports:
+      - "9666:9666"
+    volumes:
+      - /home/spacedeck/config:/app/config
+      - /home/spacedeck/storage:/app/storage
+      - /home/spacedeck/database/database.sqlite:/app/database.sqlite
