@@ -19,10 +19,15 @@ Spacedeck Docker image.
 Promoted `bash` to shell first class.
 
 ## How
-After updating the paths in the `docker-compose.yml` file and adjusting the config in `config/default.json`, before putting it in the correct `config/` directory:
+1. Update the paths in the `docker-compose.yml` file.
+2. Adjust the configuration in `config/default.json`. Especially change the "invite_code", as everyone with this code will be able to sign up to your instance.
+3. After finishing the adjustments in the configuration file, put it into whichever directory is mounted as `/app/config` in the image. You can check this in the `docker-compose.yml` file.
+4. Run the server:
 ```bash
 docker-compose up -d
 ```
+
+For further information, [visit the upstream project](https://github.com/spacedeck/spacedeck-open).
 
 ## Get
 Latest build:
