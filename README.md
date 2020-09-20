@@ -16,7 +16,7 @@
 Spacedeck Docker image.
 
 ## Why
-Promoted `bash` to shell first class.
+The official Docker image is a huge mess and its architecture sucks. This image does everything better than the original image, in every aspect.
 
 ## How
 1. Update the paths in the `docker-compose.yml` file.

@@ -76,6 +76,8 @@ RUN rm -fr /tmp/* /var/tmp/* /var/cache/*/*
 EXPOSE 9666
 
 VOLUME [ "/app/config" ]
+VOLUME [ "/app/storage" ]
+VOLUME [ "/app/database" ]
 
 ENTRYPOINT [ "/usr/local/bin/node" ]
 CMD [ "spacedeck.js" ]
